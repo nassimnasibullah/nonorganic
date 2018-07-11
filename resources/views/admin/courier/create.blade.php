@@ -33,15 +33,15 @@
                                             />
                                         </div>
                                     </fieldset>
-                                    <fieldset>
-                                        <h5>Harga
-                                            <small class="text-muted"></small>
-                                        </h5>
-                                        <div class="form-group">
-                                            <input id="price"  name="price" type="text" class="form-control date-inputmask" placeholder="Harga"
-                                            />
-                                        </div>
-                                    </fieldset>
+                                    {{--<fieldset>--}}
+                                        {{--<h5>Harga--}}
+                                            {{--<small class="text-muted"></small>--}}
+                                        {{--</h5>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<input id="price"  name="price" type="text" class="form-control date-inputmask" placeholder="Harga"--}}
+                                            {{--/>--}}
+                                        {{--</div>--}}
+                                    {{--</fieldset>--}}
                                     <div class="form-actions">
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary">Submit <i class="ft-thumbs-up position-right"></i></button>

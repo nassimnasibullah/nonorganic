@@ -30,12 +30,12 @@
                                         <div class="form-group">
                                             {{ Form::text('name', null, array('id' => 'name','class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
                                         </div>
-                                        <h5>Harga
-                                            <small class="text-muted"></small>
-                                        </h5>
-                                        <div class="form-group">
-                                            {{ Form::text('price', null, array('id' => 'price','class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-                                        </div>
+                                        {{--<h5>Harga--}}
+                                            {{--<small class="text-muted"></small>--}}
+                                        {{--</h5>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{{ Form::text('price', null, array('id' => 'price','class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}--}}
+                                        {{--</div>--}}
                                     </fieldset>
                                     <div class="form-actions">
                                         <div class="text-right">

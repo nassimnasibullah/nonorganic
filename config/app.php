@@ -149,7 +149,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        rizalafani\rajaongkirlaravel\RajaOngkirServiceProvider::class,
+        Agungjk\Rajaongkir\RajaOngkirServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
 
         /*
@@ -217,7 +217,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-        'RajaOngkir' => rizalafani\rajaongkirlaravel\RajaOngkirFacade::class,
+        'RajaOngkir' => Agungjk\Rajaongkir\RajaOngkirFacade::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
     ],

@@ -102,11 +102,11 @@
                                     <tbody>
                                     <tr>
                                         <td>Sub Total</td>
-                                        <td class="text-right">{{ number_format($order->total - $order->courier->price,2) }}</td>
+                                        <td class="text-right">{{ number_format($order->total - $order->service_price,2) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Ongkos Kirim</td>
-                                        <td class="text-right">{{ number_format($order->courier->price, 2) }}</td>
+                                        <td class="text-right">{{ number_format($order->service_price, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <td>TOTAL</td>

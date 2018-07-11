@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\CustomerAuth;
-USE App\Product;
+
+use App\RajaOngkir;
+
+//use Agungjk\Rajaongkir\RajaOngkir;
+use App\Product;
 
 use App\Courier;
 use App\Http\Controllers\Controller;
@@ -24,13 +28,54 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $couriers = Courier::all();
+            $init = new RajaOngkir('698f91d36e192586910a696eaf0ecfb6', false);
             $payments = Payment::all();
-            return view('customer.cart')->with(['couriers' => $couriers, 'payments' => $payments]);
+            $provinces = $init->getProvince();
+
+            $jsonArray = json_decode($provinces, true);
+            $a = $jsonArray["rajaongkir"];
+            $b = $a["results"];
+
+            $city = $init->getCity();
+            $jsonArr = json_decode($city, true);
+            $c = $jsonArr["rajaongkir"];
+            $d = $a["results"];
+
+            $cost = $init->getCost(248, 280, 1, 'jne');
+//            return $cost;
+
+//            return $b;
+            return view('customer.cart')->with(['provinces' => $a, 'couriers' => $couriers, 'payments' => $payments]);
         }
-        
+
         return redirect()->route('customer/login');
 
     }
+
+    public function getCityByProvince($id)
+    {
+        $init = new RajaOngkir('698f91d36e192586910a696eaf0ecfb6', false);
+        $city = $init->getCity(false, $id);
+
+        $jsonArray = json_decode($city, true);
+        $a = $jsonArray["rajaongkir"];
+
+        return $a;
+    }
+
+    public function getShippingCost($to, $courier)
+    {
+        $init = new RajaOngkir('698f91d36e192586910a696eaf0ecfb6', true);
+
+        $cost = $init->getCost(247, $to, 1, $courier);
+        $jsonArray = json_decode($cost, true);
+        $a = $jsonArray["rajaongkir"];
+        $b = $a["results"];
+//        $c = $b["service"];
+//        $d = json_encode($b["costs"]);
+        return $b;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +89,7 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +108,7 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -74,7 +119,7 @@ class CartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -85,8 +130,8 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -108,7 +153,7 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -142,6 +187,8 @@ class CartController extends Controller
         $order->courier_id = $request->input('courier_id');
         $order->delivery = $request->input('delivery');
         $order->total = $request->input('total');
+        $order->courier_service = $request->input('courier_service');
+        $order->service_price = $request->input('service_price');
 
         $order->save();
 
@@ -158,7 +205,7 @@ class CartController extends Controller
 
         }
 
-        
+
         $this->emptyCart();
         $payment = Payment::find($request->input('payment_id'));
         return view('customer.payment')->with(['payment' => $payment]);
@@ -169,6 +216,14 @@ class CartController extends Controller
         $product = Product::find($id);
         $product->quantity = $product->quantity - $qty;
         $product->save();
+    }
+
+
+    public function tes()
+    {
+        $arr = ['Madiun', 'SUrabaya', 'Jakarta'];
+
+        return $arr;
     }
 
 }

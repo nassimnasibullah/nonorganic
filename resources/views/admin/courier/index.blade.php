@@ -24,14 +24,12 @@
                             <thead>
                             <tr>
                                 <th>Nama Kurir</th>
-                                <th>Harga</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($couriers as $courier)
                             <tr>
                                 <td><a href="{{ url('admin/courier/' . $courier->id.'/edit') }}">{{ $courier->name }}</a></td>
-                                <td>{{ $courier->price }}</td>
 
                             </tr>
                             @endforeach

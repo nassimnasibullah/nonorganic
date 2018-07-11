@@ -20,6 +20,8 @@ class CreateOrdersTable extends Migration
             $table->integer('courier_id');
             $table->decimal('total', 10, 2);
             $table->longText('delivery');
+            $table->string('courier_service');
+            $table->decimal('service_price');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

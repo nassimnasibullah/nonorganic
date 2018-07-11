@@ -4,8 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "42845fbb0444cec308113f897f5341df",
+    "content-hash": "9cb01d4bedb48d33d6ff089c88e8e269",
     "packages": [
+        {
+            "name": "agungjk/rajaongkir",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agungjk/rajaongkir.git",
+                "reference": "280415f91276daec51dd3809ede5dbcfe81a781b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agungjk/rajaongkir/zipball/280415f91276daec51dd3809ede5dbcfe81a781b",
+                "reference": "280415f91276daec51dd3809ede5dbcfe81a781b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Agungjk\\Rajaongkir\\RajaOngkirServiceProvider"
+                    ],
+                    "aliases": {
+                        "RajaOngkir": "Agungjk\\Rajaongkir\\RajaOngkirFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Agungjk\\Rajaongkir\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Agung Jati Kusumo",
+                    "email": "agungjk.social@gmail.com"
+                }
+            ],
+            "description": "Raja Ongkir API Wrapper for Laravel 5",
+            "keywords": [
+                "application programming interface",
+                "laravel",
+                "rajaongkir",
+                "wrapper"
+            ],
+            "time": "2018-02-08T07:32:40+00:00"
+        },
         {
             "name": "barryvdh/laravel-snappy",
             "version": "v0.4.1",
@@ -1789,6 +1841,48 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
+        },
+        {
+            "name": "rifkyekayama/rajaongkir-laravel",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rifkyekayama/rajaongkir-laravel.git",
+                "reference": "94ea1f746425996cd2366292a6d02f9c5722f41f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rifkyekayama/rajaongkir-laravel/zipball/94ea1f746425996cd2366292a6d02f9c5722f41f",
+                "reference": "94ea1f746425996cd2366292a6d02f9c5722f41f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.6.*",
+                "php": ">=7.1.3"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "RifkyEkayama\\RajaOngkir\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rifky Ekayama",
+                    "email": "rifkyekayama@gmail.com"
+                }
+            ],
+            "description": "Package untuk request API RajaOngkir, Support Starter, Basic, dan Pro",
+            "keywords": [
+                "application programming interface",
+                "laravel",
+                "rajaongkir"
+            ],
+            "time": "2018-03-18T12:33:36+00:00"
         },
         {
             "name": "rizalafani/rajaongkirlaravel",
