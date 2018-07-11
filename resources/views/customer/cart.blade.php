@@ -389,7 +389,7 @@
             var hrg = $("#service option:selected").data('price');
             var service_name = $("#service option:selected").text();
             var gd = 0;
-            var sub_total = $("#sub_total").text()
+            var sub_total = $("#sub_total").text();
             console.log("========================");
             console.log(service_name);
 
@@ -399,7 +399,7 @@
             // var shipping = $("#courier_id option:selected").data('price');
             var shipping = hrg;
             var sub_total = $("#sub_total").text();
-            var delivery = $("#address").val() + ", " + $("#city option:selected").text() + ", " + $("#region option:selected").text() + ", " + $("#country option:selected").text() + ", " + document.getElementById("zip").value;
+            var delivery = $('textarea#address').val() + ", " + $("#city option:selected").text() + ", " + $("#region option:selected").text() + ", " + $("#country option:selected").text() + ", " + document.getElementById("zip").value;
             grand_total = parseFloat(shipping) + parseFloat(sub_total);
             document.getElementById("shipping_price").innerHTML = $("#courier_id option:selected").value;
 
