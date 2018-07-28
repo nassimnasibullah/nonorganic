@@ -120,7 +120,7 @@
                                 <img src="{{ asset("admin/app-assets/images/pages/signature-scan.png") }}" alt="signature" class="height-100"
                                 />
 {{--                                <h6>{{ Auth::user()->name }}</h6>--}}
-                                <p class="text-muted">{{ Auth::user()->name }}</p>
+                                <p class="text-muted">Hj. Siti Amiyatin</p>
                             </div>
                         </div>
                     </div>
