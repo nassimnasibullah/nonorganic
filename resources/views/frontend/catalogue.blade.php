@@ -31,7 +31,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="{{ asset("images/products/".$product->image) }}" alt="" />
+                                        <a href="{{ url('product/'.$product->id) }}"><img src="{{ asset("images/products/".$product->image) }}" alt="" /></a>
                                         <h2>Rp. {{ number_format($product->price,2) }}</h2>
                                         <p>{{ $product->name }}</p>
                                         <button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Beli</button>

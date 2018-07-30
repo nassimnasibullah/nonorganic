@@ -23,7 +23,7 @@
                                 <div class="col-sm-6">
                                     <h1>{{ $slider->title }}</h1>
                                     <p>{{ $slider->description }}</p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="{{ asset("images/sliders/".$slider->image) }}" class="girl img-responsive" alt="" />

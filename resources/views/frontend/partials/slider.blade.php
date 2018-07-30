@@ -15,13 +15,13 @@
                             <div class="col-sm-6">
                                 <h1><span>Nonorganic</span>Shop</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{ asset("images/sliders/baru.jpg") }}" class="baru img-responsive" alt="" />
-								<h4><img src="images/home/aaaaa.jpg" width="700" height="322"></h4>
+								<h4><img src="images/home/LogoMaker01.jpg" width="700" height="322"></h4>
                                 <img src="{{ asset("images/sliders/baru1.png") }}"  class="baru1" alt="" />
-								<h4><img src="images/home/aaaaa.jpg" width="700" height="322"></h4>
+								<h4><img src="images/home/LogoMaker01.jpg" width="700" height="322"></h4>
                             </div>
                         </div>
                     </div>
