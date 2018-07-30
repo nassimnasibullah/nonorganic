@@ -151,7 +151,9 @@ return [
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Agungjk\Rajaongkir\RajaOngkirServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
-
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
+        ConsoleTVs\Invoices\InvoicesServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -218,8 +220,10 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'RajaOngkir' => Agungjk\Rajaongkir\RajaOngkirFacade::class,
-        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+//        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+//        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class
     ],
 
 ];

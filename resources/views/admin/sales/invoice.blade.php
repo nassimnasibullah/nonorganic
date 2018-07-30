@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/…; integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 @extends('admin.template')
 
     @section('content')
@@ -163,6 +164,18 @@
                         'elementHandlers': specialElementHandlers
                     });
                     doc.save('sample-file.pdf');
+                });
+
+                $.ajax({
+                    method: 'GET',
+                    url: 'generateNota',
+                    data: {},
+                    success: function ( resp ) {
+                        console.log(resp);
+                    },
+                    error: function ( resp ) {
+                        console.log(resp);
+                    }
                 });
             }
         </script>

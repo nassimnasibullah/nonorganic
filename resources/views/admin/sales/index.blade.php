@@ -124,6 +124,7 @@
                                 </div>
                             </div>
                             <div class="card-content collapse show">
+                                <a href="{{ url('admin/generateSalesReport') }}" class="btn btn-success" style="margin-left: 37px;">Export</a>
                                 <div class="card-body card-dashboard">
 
                                     <table class="table table-striped table-bordered dataex-visibility-print">

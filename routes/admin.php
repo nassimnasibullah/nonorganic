@@ -10,5 +10,7 @@ Route::resource('/customer', 'AdminAuth\CustomerController');
 Route::resource('/courier', 'AdminAuth\CourierController');
 Route::resource('/payment', 'AdminAuth\PaymentController');
 Route::resource('/slider', 'AdminAuth\SliderController');
+Route::get('/generateNota/{id}', 'AdminAuth\ReportController@generateNota');
+Route::get('/generateSalesReport', 'AdminAuth\ReportController@generateSalesReport');
 
 

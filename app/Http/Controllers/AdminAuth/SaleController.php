@@ -87,7 +87,7 @@ class SaleController extends Controller
 
         $order->save();
 
-        return redirect('admin/sales');
+        return redirect('admin/generateNota/'. $id);
     }
 
     /**
