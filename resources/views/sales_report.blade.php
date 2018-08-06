@@ -30,8 +30,12 @@
             <td>
                {{ $order->payment->name }}
             </td>
-            <td class="text-truncate">{{ $order->courier->name }}</td>
-            <td class="text-truncate">{{ $order->total }}</td>
+                @if($order->payment_id ==  1)
+                    <td class="text-truncate"> - </td>
+                @else
+                    <td class="text-truncate">{{ $order->courier->name }}</td>
+                @endif
+                    <td class="text-truncate">{{ $order->total }}</td>
         </tr>
         @endforeach
         </tbody>

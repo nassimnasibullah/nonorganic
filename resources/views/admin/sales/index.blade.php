@@ -149,7 +149,7 @@
                                         @else
                                         <td class="text-truncate"><i class="la la-dot-circle-o danger font-medium-1 mr-1"></i>Ditolak</td>
                                         @endif
-                                        <td class="text-truncate"><a href="{{ url('admin/sales/'. $order->id) }}">{{ $order->id }}</a></td>
+                                        <td class="text-truncate"><a href="{{ url('admin/sale/show/'. $order->id) }}">{{ $order->id }}</a></td>
                                         <td class="text-truncate"><a href="{{ url('admin/sales/'. $order->id. '/edit') }}">{{ $order->id }}</a></td>
                                         <td class="text-truncate">
                                         <span>{{ $order->customer->name }}</span>

@@ -12,5 +12,7 @@ Route::resource('/payment', 'AdminAuth\PaymentController');
 Route::resource('/slider', 'AdminAuth\SliderController');
 Route::get('/generateNota/{id}', 'AdminAuth\ReportController@generateNota');
 Route::get('/generateSalesReport', 'AdminAuth\ReportController@generateSalesReport');
+Route::get('/sale/show/{id}', 'AdminAuth\SaleController@show');
+Route::delete('/sale/del/{id}', 'AdminAuth\SaleController@destroy')->name('sale.del');
 
 

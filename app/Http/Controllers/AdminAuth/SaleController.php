@@ -50,6 +50,10 @@ class SaleController extends Controller
      */
     public function show($id)
     {
+        $order = Order::find($id);
+//         dd($order);
+        $order_details = OrderDetail::where('order_id', '=', $id)->get();
+        return view('admin.sales.show')->with(['order' => $order, 'order_details' => $order_details]);
 //        $orders = Order::with('order_detail')->where('status', '=', 1)->where('id', '=', $id)->get();
 //        $order_details = OrderDetail::where($id)->get();
 //        return view('admin.sales.show')->with(['order' => $orders, 'order_details' => $order_details]);
@@ -98,6 +102,13 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order_details = OrderDetail::where('order_id', '=', $order->id);
+            foreach ($order_details as $od) {
+                $od->delete();
+            }
+        $order->delete();
+
+        return redirect('admin/sales');
     }
 }
