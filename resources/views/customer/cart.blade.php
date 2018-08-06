@@ -430,6 +430,10 @@
             if (cod == 1) {
                 var sub_total = $("#sub_total").text();
                 $('input[name="total"]').val(parseFloat(sub_total));
+                $('input[name="courier_id"]').val(null);
+                var delivery = $('textarea#address').val() + ", " + $("#city option:selected").text() + ", " + $("#region option:selected").text() + ", " + $("#country option:selected").text() + ", " + document.getElementById("zip").value;
+                $('input[name="delivery"]').val(delivery);
+
                 $('#service').hide();
                 $('#courier_id').hide();
             } else {
