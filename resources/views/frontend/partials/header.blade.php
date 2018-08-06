@@ -44,7 +44,8 @@
                                 <li><a href="{{ url('customer/cart') }}"><i class="fa fa-shopping-cart"></i><span>{{ Cart::count() }}</span> Cart</a></li>
 
                                     {{--<li><a href="{{ url('/customer/payment') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>--}}
-                                    <li><a href="{{ url('/customer/logout') }}" onclick="event.preventDefault();
+                                @if(Auth::check())
+                                <li><a href="{{ url('/customer/logout') }}" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i> Logout</a>
                                     <form id="logout-form"
                                           action="{{ url('/customer/logout') }}"
@@ -53,6 +54,10 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
+                                @else
+                                <li><a href="{{ url('/customer/login') }}"><i class="fa fa-lock"></i> Login</a>
+                                </li>
+                                @endif
 
                         </ul>
                     </div>

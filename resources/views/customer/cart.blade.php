@@ -137,6 +137,7 @@
                             <li class="single_field">
                                 <label>Pembayaran:</label>
                                 <select class="payment_ids" name="payment_ids" id="payment_ids">
+                                    <option>--pilih pembayaran--</option>
                                     @foreach($payments as $payment)
                                         <option value="{{ $payment->id }}">{{ $payment->name }}</option>
                                     @endforeach
@@ -278,7 +279,8 @@
 
         jQuery("select[name='region']").change(function () {
             $.getJSON("http://localhost:8000/customer/getCityByProvince/"+$("#region option:selected").val(), function (data) {
-                console.log(data);
+            // $.getJSON(url + $("#region option:selected").val(), function (data) {
+            console.log(data);
                 var temp = [];
                 //CONVERT INTO ARRAY
                 $.each(data['results'], function (key, value) {
@@ -422,6 +424,19 @@
             // console.log(city);
         });
 
+        $('#payment_ids').change(function () {
+            var cod = $(this).val();
+            console.log(cod);
+            if (cod == 1) {
+                var sub_total = $("#sub_total").text();
+                $('input[name="total"]').val(parseFloat(sub_total));
+                $('#service').hide();
+                $('#courier_id').hide();
+            } else {
+                $('#service').show();
+                $('#courier_id').show();
+            }
+        })
     </script>
 @endsection
 @endsection

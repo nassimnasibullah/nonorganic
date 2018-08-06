@@ -19,8 +19,6 @@ Route::get('/catalogue/{id}', 'PageController@catalogue');
 Route::get('/product/{id}', 'PageController@product');
 Route::get('/gocheckout', 'PageController@gocheckout')->name('customer.payment');
 
-
-
 Route::group(['prefix' => 'admin'], function () {
   Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'AdminAuth\LoginController@login');

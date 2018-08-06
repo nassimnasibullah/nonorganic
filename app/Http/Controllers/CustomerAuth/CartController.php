@@ -183,6 +183,14 @@ class CartController extends Controller
     {
         $order = new Order;
         $order->customer_id = Auth::user()->id;
+
+        //if payment == cash on delivery
+        //address & courier not necessary
+        if ($request->input('payment_id') == 1) {
+            $order->courier_id = NULL;
+            $order->courier_service = NULL;
+            $order->service_price = NULL;
+        }
         $order->payment_id = $request->input('payment_id');
         $order->courier_id = $request->input('courier_id');
         $order->delivery = $request->input('delivery');
