@@ -113,10 +113,7 @@
                     </div>
                     <div class="text-center">
                         {{--                                <p>{{ Auth::user()->name }}</p>--}}
-                        <img src="admin/app-assets/images/pages/signature-scan.png" alt="signature"
-                             height="200px"; 
-							 width="150px";
-                        />
+                        <img src="admin/app-assets/images/pages/signature-scan.png" alt="signature"/>
                         {{--                                <h6>{{ Auth::user()->name }}</h6>--}}
                         <p class="text-muted">Hj. Siti Amiyatin</p>
                     </div>
