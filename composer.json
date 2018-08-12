@@ -10,6 +10,7 @@
         "barryvdh/laravel-dompdf": "^0.8.2",
         "barryvdh/laravel-snappy": "^0.4.1",
         "carlos-meneses/laravel-mpdf": "^1.1",
+        "codedge/laravel-fpdf": "^1.2",
         "consoletvs/invoices": "^1.1",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.5",
