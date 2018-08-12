@@ -14,9 +14,9 @@
                 <img class="img-rounded" height="{{ $invoice->logo_height }}" src="{{ $invoice->logo }}">
             </div>
             <div style="margin-left:300pt;">
-                <b>Date: </b> {{ $invoice->date->formatLocalized('%A %d %B %Y') }}<br />
+                <b>Tanggal: </b> {{ $invoice->date->formatLocalized('%A %d %B %Y') }}<br />
                 @if ($invoice->number)
-                    <b>Invoice #: </b> {{ $invoice->number }}
+                    <b>NOTA KE #: </b> {{ $invoice->number }}
                 @endif
                 <br />
             </div>
@@ -25,7 +25,7 @@
         <h2>{{ $invoice->name }} {{ $invoice->number ? '#' . $invoice->number : '' }}</h2>
         <div style="clear:both; position:relative;">
             <div style="position:absolute; left:0pt; width:250pt;">
-                <h4>Business Details:</h4>
+                <h4>DETAIL NOTA</h4>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {!! $invoice->business_details->count() == 0 ? '<i>No business details</i><br />' : '' !!}
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div style="margin-left: 300pt;">
-                <h4>Customer Details:</h4>
+                <h4>PEMBELI</h4>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {!! $invoice->customer_details->count() == 0 ? '<i>No customer details</i><br />' : '' !!}
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <h4>Items:</h4>
+        <h4>Detail Barang Yang Dibeli</h4>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -81,7 +81,7 @@
         <div style="clear:both; position:relative;">
             @if($invoice->notes)
                 <div style="position:absolute; left:0pt; width:250pt;">
-                    <h4>Notes:</h4>
+                    <h4>Terimakasih by KKM Sangen</h4>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             {{ $invoice->notes }}
@@ -94,7 +94,7 @@
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <td><b>Subtotal</b></td>
+                            <td><b>Total Harga</b></td>
                             <td>{{ $invoice->formatCurrency()->symbol }} {{ $invoice->subTotalPriceFormatted() }} </td>
                         </tr>
                         <tr>
@@ -111,7 +111,7 @@
                             <td>{{ $invoice->formatCurrency()->symbol }} {{ $invoice->taxPriceFormatted() }} </td>
                         </tr>
                         <tr>
-                            <td><b>TOTAL</b></td>
+                            <td><b>TOTAL YG DIBAYAR</b></td>
                             <td><b>{{ $invoice->formatCurrency()->symbol }} {{ $invoice->totalPriceFormatted() }} </b></td>
                         </tr>
                     </tbody>
