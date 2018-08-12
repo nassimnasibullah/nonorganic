@@ -16,11 +16,8 @@ class ReportController extends Controller
     {
         $order = Order::find($id);
         $order_details = OrderDetail::where('order_id', '=', $id)->get();
-        foreach ($order_details as $od) {
 
-        }
         $invoice = \ConsoleTVs\Invoices\Classes\Invoice::make()
-            ->addItem($od->product->name, $od->product->price, $od->quantity, $od->product->price * $od->quantity)
             ->number($id)->tax($order->service_price)->notes('Hormat Kami : Non-Organik')
             ->customer([
                     'name' => $order->customer->name,
@@ -28,7 +25,13 @@ class ReportController extends Controller
                     'phone' => '',
                     'zip' => '',
                     'city' => '',
-                    'country' => $order->delivery])->download('demo');
+                    'country' => $order->delivery]);
+
+        foreach ($order_details as $od) {
+            $invoice->addItem($od->product->name, $od->product->price, $od->quantity, $od->product->price * $od->quantity);
+        }
+
+        $invoice->download('nota');
     }
 
     public function generateSalesReport()
